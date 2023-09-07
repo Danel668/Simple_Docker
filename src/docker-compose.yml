@@ -1,0 +1,16 @@
+version: '3'
+services:
+  server_container:
+    build:
+      context: .
+    networks:
+    - my_network
+  nginx_proxy:
+    build: 
+      context: ./part6/
+    ports:
+      - "80:8080"
+    networks:
+    - my_network
+networks:
+  my_network:
